@@ -1,0 +1,17 @@
+{
+  "name": "snapmint2",
+  "version": "1.0.2",
+  "description": "snapmint customize plugin ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ionic",
+    "cordova",
+    "android",
+    "snapmint2"
+  ],
+  "author": "Tajuddin",
+  "license": "ISC"
+}
