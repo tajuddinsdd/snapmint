@@ -18,6 +18,9 @@ public class snapmint2 extends CordovaPlugin {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
+        } else if (action.equals("openSnapmint")) {
+            this.openSnapmint(args, callbackContext);
+            return true;
         }
         return false;
     }
@@ -25,6 +28,14 @@ public class snapmint2 extends CordovaPlugin {
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
+        } else {
+            callbackContext.error("Expected one non-empty string argument.");
+        }
+    }
+
+    private void openSnapmint(JSONArray args, CallbackContext callbackContext) {
+        if (args != null) {
+            callbackContext.success(args);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
