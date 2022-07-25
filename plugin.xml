@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova.plugins.snapmint2" version="1.0.4">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova.plugins.snapmint2" version="1.0.5">
    <name>snapmint2</name>
    <js-module name="snapmint2" src="www/snapmint2.js">
       <clobbers target="cordova.plugins.snapmint2" />
@@ -11,6 +11,6 @@
          </feature>
       </config-file>
       <config-file parent="/*" target="AndroidManifest.xml" />
-      <source-file src="src/android/src/android/src/main/java/com/snapmint2/snapmint2.java" target-dir="src/cordova/plugins/snapmint2/snapmint2" />
+      <source-file src="src/android/snapmint2.java" target-dir="src/cordova/plugins/snapmint2/snapmint2" />
    </platform>
 </plugin>
