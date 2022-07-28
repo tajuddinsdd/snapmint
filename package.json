@@ -1,6 +1,6 @@
 {
   "name": "snapmint2",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "snapmint customize plugin ",
   "main": "index.js",
   "scripts": {
