@@ -196,22 +196,18 @@ public class snapmint2 extends CordovaPlugin {
                 }
                 Log.d("finalDataString",finalDataString.toString());
             } catch (Exception e){ }
-            openWebView(base_url+finalDataString, callbackContext);
+            openActivity(finalDataString,base_url, callbackContext);
         } else {
            callbackContext.error("Expected one non-empty string argument.");
         }
     }
 
-    private void openWebView(String url, CallbackContext callbackContext) {
-      try {
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        myIntent.putExtra("final_url", url);
-        myIntent.putExtra("suc_url", suc_url);
-        myIntent.putExtra("fail_url", fail_url);
-        this.cordova.getActivity().startActivity(myIntent);
-      } catch (ActivityNotFoundException e) {
-        callbackContext.error("Expected one non-empty string argument.");
-      }
-  }
+    private void openActivity(String finalDataString, String url, CallbackContext callbackContext) {
+        Intent intent = new Intent(context, NewActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("final_data", finalDataString.replaceAll(" ", "%20"));
+        intent.putExtra("base_url", base_url);
+        intent.putExtra("option", "check_out");
+        this.cordova.getActivity().startActivity(intent);
+    }
 }
