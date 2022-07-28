@@ -203,10 +203,10 @@ public class snapmint2 extends CordovaPlugin {
     }
 
     private void openActivity(String finalDataString, String url, CallbackContext callbackContext) {
-        Intent intent = new Intent(context, NewActivity.class);
+        Intent intent = new Intent(this.cordova.getContext(), cordova.plugins.snapmint2.NewActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra("final_data", finalDataString.replaceAll(" ", "%20"));
-        intent.putExtra("base_url", base_url);
+        intent.putExtra("base_url", url);
         intent.putExtra("option", "check_out");
         this.cordova.getActivity().startActivity(intent);
     }
